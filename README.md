@@ -5,4 +5,4 @@ Bulk_morgan_fingerprints is able to generate the Morgan fingerprints for 50,000 
 python Bulk_Morgan_Fingerprints.py --file_path input.csv --o path_output_file <br />
 <br />
 --file_path = full path file contains smiles with header name is 'SMILES'<br />
---o == full path for the output file<br />
+--o = full path for the output file<br />
