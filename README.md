@@ -7,7 +7,7 @@ python Bulk_Morgan_Fingerprints.py --file_path input.csv --o path_output_file
 <br />
 for all the option see below:
 --file_path = full path file contains smiles with header name is 'SMILES'<br />
---o = full path for the output file <br />
---nBits = number of bits default:1024 <br />
---radius = select radious default:2 <br />
---format = bits or count format default:bits <br />
+--o = full path for the output; file <br />
+--nBits = number of bits; default:1024 <br />
+--radius = select radious; default:2 <br />
+--format = bits or count format; default:bits <br />
