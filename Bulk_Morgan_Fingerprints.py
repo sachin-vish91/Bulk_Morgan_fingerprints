@@ -14,6 +14,9 @@ import glob, argparse
 parser = argparse.ArgumentParser(description='Morgan_fingerprints using multitask')
 parser.add_argument('--file_path', type=str, default='', help='path for the Fingerprints files')
 parser.add_argument('--o', type=str, default='', help='output folder for saving file')
+parser.add_argument('--nBits', type=int, default=1024, help='Number of bits for Morgan fingerprints')
+parser.add_argument('--radius', type=int, default=2, help='radius for Morgan fingerprints')
+parser.add_argument('--format', type=str, default='bits',choices=['count','bits'], help='Select Morgan fingerprints type')
 args = parser.parse_args()
 
 def load_file():
@@ -32,7 +35,10 @@ def File_generator(file,smiles):
 def Morgan_fingerprints(smile):
     try:
         mol = Chem.MolFromSmiles(smile)
-        fp = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=1024)
+        if args.format == 'count':
+            fp = AllChem.GetHashedMorganFingerprint(mol, radius=args.radius, nBits=args.nBits)
+        elif args.format == 'bits':
+            fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius=args.radius, nBits=args.nBits)
         figerprints = list(fp)
     except:
         figerprints = ''
