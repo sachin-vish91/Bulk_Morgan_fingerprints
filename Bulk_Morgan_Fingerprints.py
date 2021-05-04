@@ -32,7 +32,7 @@ def File_generator(file,smiles):
 def Morgan_fingerprints(smile):
     try:
         mol = Chem.MolFromSmiles(smile)
-        fp = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=256)
+        fp = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=1024)
         figerprints = list(fp)
     except:
         figerprints = ''
