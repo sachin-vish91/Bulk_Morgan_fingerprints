@@ -5,7 +5,9 @@ sample file is available in the folder name input.csv.
 **To run this script download the code and run the following command** <br />
 python Bulk_Morgan_Fingerprints.py --file_path input.csv --o path_output_file
 <br />
-for all the option see below:
+<br />
+for all the option see below:<br />
+<br />
 --file_path = full path file contains smiles with header name is 'SMILES'<br />
 --o = full path for the output; file <br />
 --nBits = number of bits; default:1024 <br />
